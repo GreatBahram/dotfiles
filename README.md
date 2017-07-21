@@ -14,9 +14,15 @@ Then, let's install it:
 
 `git clone https://github.com/greatbahram/dotvim.git ~/.vim`
 
-Finally create a symbolic link:
+`ln -sf ~/.vim/vimrc ~/.vimrc`
 
-`ln -sf ~/.vim/.vimrc ~/.vimrc`
+`cd ~/.vim`
+
+ Enable Plugins and update them:
+
+`git submodule init`
+
+`git submodule update`
 
 *Enjoy*!
 
