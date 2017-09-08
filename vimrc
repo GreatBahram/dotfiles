@@ -3,21 +3,25 @@ call plug#begin('~/.vim/plugged')
 " On-demand loading
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " add status line to vim
-    Plug 'jiangmiao/auto-pairs'
     Plug 'bling/vim-airline'
+" Auto close for () and {} and so on.
+    Plug 'jiangmiao/auto-pairs'
 " easily add " or change it
     Plug 'tpope/vim-surround'
-" complete previous words
+" autocomplete based on previous words
     Plug 'ervandew/supertab'
+"Sort import modules in python program with execute :Isort
+   Plug 'fisadev/vim-isort'
 " close ", (, [ and ..
     Plug 'townk/vim-autoclose'
 " add flake8 syntax checker
     Plug 'nvie/vim-flake8'
 " repeat surrond.vim
     Plug 'tpope/vim-repeat'
+" Autocomplete for HTML TAG
+    Plug 'mattn/emmet-vim'
 " Color-Schema
     Plug 'sjl/badwolf'
-    Plug 'w0ng/vim-hybrid'
 "" Initialize plugin system
 call plug#end()
 " Customize Plugins
@@ -27,6 +31,9 @@ nnoremap <F9> :NERDTreeToggle<CR>
 " Set mapleader to  , 
 let mapleader=","
 " turn off search highlight by ,<space>
+"enable emmet only for css and html file
+"let g:user_emmet_install_global = 0
+"autocmd FileType html,css EmmetInstall
 nnoremap <bs> :nohlsearch<CR>
 " switch Ctrl-d with shift-tab reverse tab"
 inoremap <S-Tab> <C-d>
