@@ -25,3 +25,6 @@
 [submodule "plugged/auto-pairs"]
 	path = plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "plugged/emmet-vim"]
+	path = plugged/emmet-vim
+	url = https://github.com/mattn/emmet-vim
