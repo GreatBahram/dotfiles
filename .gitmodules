@@ -31,3 +31,6 @@
 [submodule "plugged/vim-isort"]
 	path = plugged/vim-isort
 	url = https://github.com/fisadev/vim-isort
+[submodule "plugged/vim-surround"]
+	path = plugged/vim-surround
+	url = https://github.com/anyakichi/vim-surround
