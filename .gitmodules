@@ -28,3 +28,6 @@
 [submodule "plugged/emmet-vim"]
 	path = plugged/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "plugged/vim-isort"]
+	path = plugged/vim-isort
+	url = https://github.com/fisadev/vim-isort
