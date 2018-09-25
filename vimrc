@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
 " Color-Schema
     Plug 'sjl/badwolf'
+" Flake8 for VIM
+    Plug 'nvie/vim-flake8'
 "" Initialize plugin system
 call plug#end()
 " Customize Plugins
@@ -77,6 +79,10 @@ cmap w!! w !sudo tee %
 inoremap jk <esc>
 " how to easily open others file in current directory
     " edit in current directory
+    "james offers
+    vnoremap <silent> <leader>e :w ! python3<CR>
+    nnoremap <silent> <leader>ee :%w ! python3<CR>
+    "endjames
     map <leader>ew :e <C-R>=expand("%:p:h") ."/"<CR>
     " edit in horizontal
     map <leader>es :sp <C-R>=expand("%:p:h") ."/"<CR>
@@ -86,6 +92,7 @@ inoremap jk <esc>
     map <leader>et :tabe <C-R>=expand("%:p:h") ."/"<CR>
     map <leader>vm :vsp $MYVIMRC<CR>
     map <leader>sv :source $MYVIMRC<CR>
+    nmap <leader>l :set list!<CR>
 " Navigate into buffers
     map <C-p> :bp<CR>
     map <C-n> :bn<CR>
