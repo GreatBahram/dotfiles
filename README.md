@@ -1,30 +1,20 @@
 # Introduction
 
-This is my VIM configuration, I make this repository to be able to access this 
-configuration from anywhere. Be aware, I use vim-plug as plugin manager for VIM,
-If you like to taste my VIM configuration follow the Installation Section.
+Here you can different dotfiles, for instance: .vim directory and my customization.
 
 # Installation
-    
+
 If you've already configured VIM, please first of all create a backup:
 
-`mv .vim/ myoldvim`
+## VIM installation
 
-Then, let's install it:
+```bash
+mv .vim/ oldvim  # Back up current configuration if exists!
+git clone https://github.com/greatbahram/dotvim.git
+cp -r  dotfiles/.vim ~/
+```
 
-`git clone https://github.com/greatbahram/dotvim.git ~/.vim`
-
-`ln -sf ~/.vim/vimrc ~/.vimrc`
-
-`cd ~/.vim`
-
- Enable Plugins and update them:
-
-`git submodule init`
-
-`git submodule update`
-
-*Enjoy*!
+*Enjoy it*!
 
 # Requirement
 
