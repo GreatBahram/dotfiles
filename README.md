@@ -10,7 +10,7 @@ If you've already configured VIM, please first of all create a backup:
 
 ```bash
 mv ~/.vim/ ~/.oldvim  # Back up current configuration if exists!
-git clone https://github.com/greatbahram/dotvim.git
+git clone https://github.com/greatbahram/dotfiles.git
 cp -r  dotfiles/.vim ~/
 # Install vim-plug program
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
