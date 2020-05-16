@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
 " Color-Schema
     Plug 'sjl/badwolf'
+" Add black integration
+    Plug 'psf/black'
 
 "" Initialize plugin system
 call plug#end()
@@ -40,6 +42,7 @@ nnoremap <bs> :nohlsearch<CR>
 " switch Ctrl-d with shift-tab reverse tab"
 inoremap <S-Tab> <C-d>
 
+" Configure vim itself :-D
 filetype plugin indent on
 set mouse=a  " enable mouse into vim.
 set ruler  " Show line number and column number
