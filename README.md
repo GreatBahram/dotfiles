@@ -9,7 +9,7 @@ If you've already configured VIM, please first of all create a backup:
 ## VIM installation
 
 ```bash
-mv .vim/ oldvim  # Back up current configuration if exists!
+mv ~/.vim/ ~/.oldvim  # Back up current configuration if exists!
 git clone https://github.com/greatbahram/dotvim.git
 cp -r  dotfiles/.vim ~/
 # Install vim-plug program
