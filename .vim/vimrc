@@ -22,10 +22,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'mattn/emmet-vim'
 " Color-Schema
     Plug 'sjl/badwolf'
-" Flake8 for VIM
-    Plug 'nvie/vim-flake8'
+
 "" Initialize plugin system
 call plug#end()
+
 " Customize Plugins
 colorscheme badwolf
 " NerdTree ShortCut
@@ -39,6 +39,7 @@ let mapleader=","
 nnoremap <bs> :nohlsearch<CR>
 " switch Ctrl-d with shift-tab reverse tab"
 inoremap <S-Tab> <C-d>
+
 filetype plugin indent on
 set mouse=a  " enable mouse into vim.
 set ruler  " Show line number and column number
@@ -57,32 +58,38 @@ set smartindent
 set laststatus=2  "show status bar at the bottom of vim window
 set pastetoggle=<F5>  "enable paste toggle mode with F5 key
 set ignorecase  " ignore case sensitive
-"move easily between vim vertical and horizontal windows with Ctrl+ [h, j, k, l]
+
+" Move effortlessly between vim tabes with Ctrl+ [h, j, k, l]
     map <C-h> <C-w>h
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
-" enable/disable showing special key with Ctrl + \
-nmap <C-\> :set list!<CR> 
-" save current file with <leader> + w
-nnoremap <leader>w :w!<CR>
-" close current file with <leader> + q
-nnoremap <leader>q :q!<CR>
-" save root file without sudo with w!!
-cmap w!! w !sudo tee %
+
+" Enable/Disable showing special key with Ctrl + \
+    nmap <C-\> :set list!<CR>
+
+" Shortcuts for saving and closing files in vim
+  " Save current file easily with <leader> + w
+    nnoremap <leader>w :w!<CR>
+
+  " Close current file easily with <leader> + q
+    nnoremap <leader>q :q!<CR>
+
+" Save a file with root permission
+    cmap w!! w !sudo tee %
+
 " Enabling Folding Base on indentation and enable and disable by space "
     set foldmethod=indent
     set foldlevel=99
     " close and open fold with space key
-    nnoremap <space> za 
-" switch to normal mode with pressing <j-k> key instead of <Esc>
-inoremap jk <esc>
+    nnoremap <space> za
+    
+" Switch to normal mode with pressing <j-k> key instead of <Esc>
+    inoremap jk <esc>
+
 " how to easily open others file in current directory
     " edit in current directory
-    "james offers
-    vnoremap <silent> <leader>e :w ! python3<CR>
-    nnoremap <silent> <leader>ee :%w ! python3<CR>
-    "endjames
+
     map <leader>ew :e <C-R>=expand("%:p:h") ."/"<CR>
     " edit in horizontal
     map <leader>es :sp <C-R>=expand("%:p:h") ."/"<CR>
@@ -93,15 +100,12 @@ inoremap jk <esc>
     map <leader>vm :vsp $MYVIMRC<CR>
     map <leader>sv :source $MYVIMRC<CR>
     nmap <leader>l :set list!<CR>
+
 " Navigate into buffers
     map <C-p> :bp<CR>
     map <C-n> :bn<CR>
     map  <leader>bd :bd!<CR>
-    if has("autocmd")
-" Load skeleton for based on suffix
-augroup templates
-    autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
-    autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
-    autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
-    augroup END
-endif
+
+" Execute Python code inside vim - James Powell
+    vnoremap <silent> <leader>e :w ! python3<CR>
+    nnoremap <silent> <leader>ee :%w ! python3<CR>
