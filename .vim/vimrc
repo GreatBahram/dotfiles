@@ -1,48 +1,46 @@
-"vim-plug configuration
-call plug#begin('~/.vim/plugged')
-" On-demand loading
-    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" add status line to vim
-    Plug 'bling/vim-airline'
-" Auto close for () and {} and so on.
-    Plug 'jiangmiao/auto-pairs'
-" easily add " or change it
-    Plug 'tpope/vim-surround'
-" autocomplete based on previous words
-    Plug 'ervandew/supertab'
-"Sort import modules in python program with execute :Isort
-   Plug 'fisadev/vim-isort'
-" close ", (, [ and ..
-    Plug 'townk/vim-autoclose'
-" add flake8 syntax checker
-    Plug 'nvie/vim-flake8'
-" repeat surrond.vim
-    Plug 'tpope/vim-repeat'
-" Autocomplete for HTML TAG
-    Plug 'mattn/emmet-vim'
-" Color-Schema
-    Plug 'sjl/badwolf'
-" Add black integration
-    Plug 'psf/black'
+" Check if there is need to install vimplug
+let need_to_install_plugins = 0
 
-"" Initialize plugin system
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    "autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    let need_to_install_plugins = 1
+endif
+
+call plug#begin('~/.vim/plugged')
+    Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    Plug 'bling/vim-airline' " Add status line to vim
+    Plug 'jiangmiao/auto-pairs'  " Auto close for () and {} and so on.
+    Plug 'tpope/vim-surround' " Easily add \" or change it
+    Plug 'ervandew/supertab'  " Autocomplete based on previous words
+    Plug 'fisadev/vim-isort'  "Sort import modules in python program with execute :Isort
+    Plug 'townk/vim-autoclose'  " close \", (, [ and ..
+    Plug 'nvie/vim-flake8'  " Add flake8 syntax checker
+    Plug 'tpope/vim-repeat'
+    Plug 'mattn/emmet-vim'  " Autocomplete for HTML TAG
+    Plug 'sjl/badwolf'  " Color-Schema
+    Plug 'psf/black'  " Add black integration
 call plug#end()
+
+if need_to_install_plugins == 1
+    echo "Installing plugins..."
+    silent! PlugInstall
+    echo "Done!"
+    q
+endif
 
 " Customize Plugins
 colorscheme badwolf
-" NerdTree ShortCut
 nnoremap <F9> :NERDTreeToggle<CR>
-" Set mapleader to  , 
-let mapleader=","
-" turn off search highlight by ,<space>
-"enable emmet only for css and html file
-"let g:user_emmet_install_global = 0
-"autocmd FileType html,css EmmetInstall
+" NerdTree ShortCut
+let mapleader=","  " Set mapleader to ','
+" Turn off search highlight by ,<space>
 nnoremap <bs> :nohlsearch<CR>
 " switch Ctrl-d with shift-tab reverse tab"
 inoremap <S-Tab> <C-d>
-  " Run Black with <leader>b
-  nnoremap <leader>b :Black<CR>
+" Run Black with <leader>b
+nnoremap <leader>b :Black<CR>
 
 " Configure vim itself :-D
 filetype plugin indent on
@@ -65,52 +63,38 @@ set pastetoggle=<F5>  "enable paste toggle mode with F5 key
 set ignorecase  " ignore case sensitive
 
 " Move effortlessly between vim tabes with Ctrl+ [h, j, k, l]
-    map <C-h> <C-w>h
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Enable/Disable showing special key with Ctrl + \
     nmap <C-\> :set list!<CR>
 
 " Shortcuts for saving and closing files in vim
-  " Save current file easily with <leader> + w
-    nnoremap <leader>w :w!<CR>
+" Save current file easily with <leader> + w
+nnoremap <leader>w :w!<CR>
 
-  " Close current file easily with <leader> + q
-    nnoremap <leader>q :q!<CR>
+" Close current file easily with <leader> + q
+nnoremap <leader>q :q!<CR>
 
 " Save a file with root permission
-    cmap w!! w !sudo tee %
+cmap w!! w !sudo tee %
 
 " Enabling Folding Base on indentation and enable and disable by space "
-    set foldmethod=indent
-    set foldlevel=99
-    " close and open fold with space key
-    nnoremap <space> za
-    
+set foldmethod=indent
+set foldlevel=99
+" fold and unfold with space key
+nnoremap <space> za
+
 " Switch to normal mode with pressing <j-k> key instead of <Esc>
-    inoremap jk <esc>
+inoremap jk <esc>
 
-" how to easily open others file in current directory
-    " edit in current directory
-
-    map <leader>ew :e <C-R>=expand("%:p:h") ."/"<CR>
-    " edit in horizontal
-    map <leader>es :sp <C-R>=expand("%:p:h") ."/"<CR>
-    " edit in vertical
-    map <leader>ev :vsp <C-R>=expand("%:p:h") ."/"<CR>
-    " edit in new tab
-    map <leader>et :tabe <C-R>=expand("%:p:h") ."/"<CR>
-    map <leader>vm :vsp $MYVIMRC<CR>
-    map <leader>sv :source $MYVIMRC<CR>
-    nmap <leader>l :set list!<CR>
-
-" Navigate into buffers
-    map <C-p> :bp<CR>
-    map <C-n> :bn<CR>
-    map  <leader>bd :bd!<CR>
+" Navigate between buffers
+map <C-p> :bp<CR>
+map <C-n> :bn<CR>
+map  <leader>bd :bd!<CR>
 
 " Execute Python code inside vim - James Powell
-    vnoremap <silent> <leader>e :w ! python3<CR>
-    nnoremap <silent> <leader>ee :%w ! python3<CR>
+vnoremap <silent> <leader>e :w ! python3<CR>
+nnoremap <silent> <leader>ee :%w ! python3<CR>
