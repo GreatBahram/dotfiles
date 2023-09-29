@@ -1,6 +1,6 @@
 # Introduction
 
-Here you can different dotfiles, for instance: .vim directory and my customization.
+Here you can have different dotfiles, for instance: .vim directory and my customization.
 
 # Installation
 
