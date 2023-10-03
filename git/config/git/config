@@ -25,3 +25,22 @@
 [alias]
         git = !git
         
+[core]
+	pager = delta
+
+[delta]
+# https://dandavison.github.io/delta/configuration.html
+        hyperlinks = true
+       # hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+        line-numbers = true
+        navigate = true
+        syntax-theme = Monokai Extended
+
+[diff]
+        colorMoved = default
+
+[interactive]
+        diffFilter = delta --color-only
+
+[merge]
+        conflictStyle = zdiff3
