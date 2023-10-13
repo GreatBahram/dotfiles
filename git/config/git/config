@@ -50,3 +50,5 @@
 	defaultBranch = main
 [branch]
 	sort = -committerdate
+[fetch]
+	prune = true
