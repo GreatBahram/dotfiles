@@ -47,3 +47,5 @@
         conflictStyle = zdiff3
 [init]
 	defaultBranch = main
+[branch]
+	sort = -committerdate
