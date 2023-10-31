@@ -10,4 +10,4 @@ set -x
 mkdir -p ~/.config
 
 # Link Git config if it doesn’t exist
-[ ! -e ~/.config/git ] && ln -s "$PWD/config/git" ~/.config/git
+[ ! -e ~/.config/git ] && ln -s "$PWD/git" ~/.config/git
