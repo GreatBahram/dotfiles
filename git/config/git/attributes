@@ -1,0 +1,3 @@
+*.py diff=python
+*.pyi diff=python
+*.sh diff=bash
