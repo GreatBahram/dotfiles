@@ -1,5 +1,5 @@
 # vscode
 .vscode/*
 # Python
-.venv/
+.venv*/
 *.pyc
