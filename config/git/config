@@ -1,6 +1,5 @@
 [user]
 	name = GreatBahram
-	signingkey = 9C0F11511AFC1287
 	email = aghaee.bahram@gmail.com
 
 [color "branch"]
@@ -33,9 +32,8 @@
 	pager = delta
 
 [delta]
-# https://dandavison.github.io/delta/configuration.html
         hyperlinks = true
-       # hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+        hyperlinks-file-link-format = "vscode://file/{path}:{line}"
         line-numbers = true
         navigate = true
         syntax-theme = Monokai Extended
@@ -70,3 +68,6 @@
 	rebase = true
 [log]
 	follow = true
+[rerere]
+	enabled = true
+	autoupdate = true
