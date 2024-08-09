@@ -8,8 +8,8 @@
         remote = green
 
 [color "diff"]
-        frag = magenta bold
         meta = yellow bold
+        frag = magenta bold
         new = green bold
         old = red bold
         whitespace = red reverse
