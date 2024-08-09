@@ -1,5 +1,8 @@
 # vscode
 .vscode/*
+
 # Python
 .venv*/
 *.pyc
+*.pem
+*.crt
