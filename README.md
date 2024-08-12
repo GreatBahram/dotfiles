@@ -1,12 +1,6 @@
-# Introduction
+# Bahram's dotfiles
 
-Here you can have different dotfiles, for instance: .vim directory and my customization.
-
-# Installation
-
-If you've already configured VIM, please first of all create a backup:
-
-## VIM installation
+## Vim
 
 ```bash
 mv ~/.vim/ ~/.oldvim  # Back up current configuration if exists!
@@ -18,7 +12,14 @@ cp -r  dotfiles/.vim ~/
 
 *Enjoy it*!
 
-# Requirement
+## Git
+
+```shell
+cd dotfiles
+./setup.sh
+```
+
+# Requirements
 
 * Git
 * cURL
