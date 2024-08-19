@@ -71,3 +71,6 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+[pager]
+	stash = true
+	status = true
