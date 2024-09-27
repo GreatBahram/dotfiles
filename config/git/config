@@ -51,8 +51,6 @@
         conflictStyle = zdiff3
 [init]
 	defaultBranch = main
-[branch]
-	sort = -committerdate
 [fetch]
 	prune = true
 [status]
@@ -73,3 +71,5 @@
 	autoupdate = true
 [pager]
 	stash = true
+[branch]
+	sort = -committerdate
