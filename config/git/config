@@ -59,7 +59,7 @@
 [commit]
 	verbose = true
 [stash]
-	showPatch = true
+	showpatch = true
 [push]
 	autosetupremote = true
 [pull]
