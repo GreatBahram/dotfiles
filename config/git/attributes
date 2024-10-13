@@ -1,3 +1,15 @@
 *.py diff=python
 *.pyi diff=python
 *.sh diff=bash
+*.rs diff=rust
+*.md diff=markdown
+
+*.png diff=exiftool
+*.jpg diff=exiftool
+*.jpeg diff=exiftool
+*.gif diff=exiftool
+
+*.ipynb diff=pandoc-to-markdown
+*.odt diff=pandoc-to-markdown
+*.rtf diff=pandoc-to-markdown
+*.docx diff=pandoc-to-markdown
